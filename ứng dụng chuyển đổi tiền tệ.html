@@ -17,16 +17,16 @@
         <td>
             <label for="formCurrency">
                 <select id="formCurrency">
-                    <option value="1">USD</option>
-                    <option value="23000">Việt Nam Đồng</option>
+                    <option value="USD">USD</option>
+                    <option value="VND">Việt Nam Đồng</option>
                 </select>
             </label>
         </td>
         <td>
             <label for="toCurrency">
                 <select id="toCurrency">
-                    <option value="23000">Việt Nam Đồng</option>
-                    <option value="1">USD</option>
+                    <option value="VND">Việt Nam Đồng</option>
+                    <option value="USD">USD</option>
                 </select>
             </label>
         </td>
@@ -41,13 +41,13 @@
         let toCurrency = parseInt(document.getElementById("toCurrency").value)
         document.getElementById("result").innerHTML = input / formCurrency * toCurrency
 
-        // if ((formCurrency === "USD" && toCurrency === "USD") || (formCurrency === "VND" && toCurrency === "VND")){
-        //     document.getElementById("result").innerHTML = "Số tiền: " + input
-        // } else if (formCurrency === "USD" && toCurrency === "VND") {
-        //     document.getElementById("result").innerHTML = "Số tiền: " + (input*23000)
-        // } else {
-        //     document.getElementById("result").innerHTML = "Số tiền: " + (input/23000)
-        // }
+        if ((formCurrency === "USD" && toCurrency === "USD") || (formCurrency === "VND" && toCurrency === "VND")){
+            document.getElementById("result").innerHTML = "Số tiền: " + input
+        } else if (formCurrency === "USD" && toCurrency === "VND") {
+            document.getElementById("result").innerHTML = "Số tiền: " + (input*23000)
+        } else {
+            document.getElementById("result").innerHTML = "Số tiền: " + (input/23000)
+        }
     }
 </script>
 </body>
